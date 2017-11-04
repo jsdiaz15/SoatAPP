@@ -1,0 +1,107 @@
+<!--
+  Generated template for the Vehicle page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar color="primarydark">
+        <button ion-button menuToggle icon-only (click)="backButtonClick()">
+      <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </button>
+        <ion-title>
+            {{ "vehicle.nbar_txt_vehicle" | translate }}
+        </ion-title>
+    </ion-toolbar>
+
+    <!--
+    <ion-navbar color="primarydark">
+        
+        <button >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+        <button (click)="goBack()" royal>
+                <ion-icon name="arrow-round-back"></ion-icon>
+            </button>
+        
+        <ion-title>{{ "vehicle.nbar_txt_vehicle" | translate }}</ion-title>
+    </ion-navbar>
+-->
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+        <form [formGroup]="formVehicle" (ngSubmit)="onSubmit()">
+            <ion-item>
+                <ion-label>{{ "vehicle.select_title_branding" | translate }}</ion-label>
+                <ion-select formControlName="branding">
+                    <ion-option *ngFor="let branding of brandings">{{branding}}</ion-option>
+                </ion-select>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>{{ "vehicle.title_txt_reference" | translate }}</ion-label>
+                <ion-input class="vehicle-reference" type="text" formControlName="reference"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>{{ "vehicle.title_txt_plate" | translate }}</ion-label>
+                <ion-input class="vehicle-plate" type="text" formControlName="plate" placeholder="{{ 'vehicle.ph_txt_valid_plate' | translate }}"
+                    maxlength="6"></ion-input>
+            </ion-item>
+
+
+            <ion-card>
+                <ion-card-header>
+                    <strong>{{ "vehicle.card_txt_header_soat_1" | translate }}</strong>
+                </ion-card-header>
+                <!--                  <img [src]="base64ImageFront" *ngIf="base64ImageFront" (click)='takePicture("front")'/>-->
+                <img [src]="base64ImageFront" *ngIf="base64ImageFront" (click)='doGetPicture("front")' />
+                <ion-card-content>
+                    <ion-icon ios="ios-camera" md="md-camera" (click)='doGetPicture("front")' *ngIf="!base64ImageFront"></ion-icon>
+                </ion-card-content>
+            </ion-card>
+
+
+            <!-- <ion-card>
+                <ion-card-header>
+                    <strong>{{ "vehicle.card_txt_header_soat_2" | translate }}</strong>
+                </ion-card-header>
+                                 <img [src]="base64ImageBack" *ngIf="base64ImageBack" (click)='takePicture("back")'/>
+                <img [src]="base64ImageBack" *ngIf="base64ImageBack" (click)='doGetPicture("back")' />
+                <ion-card-content>
+                 The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
+                             <ion-icon ios="ios-camera" md="md-camera" (click)='takePicture("back")' *ngIf="!base64ImageBack"></ion-icon>
+                    <ion-icon ios="ios-camera" md="md-camera" (click)='doGetPicture("back")' *ngIf="!base64ImageBack"></ion-icon>
+                </ion-card-content>
+            </ion-card> -->
+
+
+            <!--
+            <ion-item *ngIf="!formVehicle.controls.plate.valid  && (formVehicle.controls.plate.dirty || submitAttempt)">
+                <p>{{ "vehicle.alrt_txt_E_plate_message" | translate }}</p>
+            </ion-item>
+-->
+            <!--
+            <ion-item>
+                <ion-label>{{ "vehicle.title_txt_plate" | translate }}</ion-label>
+                <ion-input formControlName="plate" type="text" [class.invalid]="!formVehicle.controls.plate.valid && (formVehicle.controls.plate.dirty || submitAttempt)"></ion-input>
+            </ion-item>
+ 
+            <ion-item *ngIf="!formVehicle.controls.plate.valid  && (formVehicle.controls.plate.dirty || submitAttempt)">
+                <p>Please enter a valid age.</p>
+            </ion-item>
+-->
+            <!--   <button ion-button type="submit" color="primarydark" block>{{ "vehicle.btn_txt_add_vehicle" | translate }}</button>-->
+
+            <!-- <button ion-button type="submit" [disabled]="!formVehicle.valid || !ImageCheck" color="primarydark" block>{{ "vehicle.btn_txt_add_vehicle" | translate }}</button> -->
+            <button ion-button type="submit" [disabled]="!formVehicle.valid" color="primarydark" block>{{ "vehicle.btn_txt_add_vehicle" | translate }}</button>
+        </form>
+    </ion-list>
+
+</ion-content>

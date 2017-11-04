@@ -1,0 +1,27 @@
+page-vehicle {
+
+    
+   .vehicle-reference {
+//        font-size: 12px;
+        text-transform: capitalize;
+//        margin: 1% auto 0 4%;
+        color: $secondary-text-color;
+    } 
+    .vehicle-plate {
+//        font-size: 12px;
+        text-transform: uppercase;
+//        margin: 1% auto 0 4%;
+        color: $secondary-text-color;
+    } 
+    
+    ion-icon {
+        font-size: 100px;
+       
+    }
+    
+    .card-content-md{
+        text-align: center;
+    }
+    
+    
+}

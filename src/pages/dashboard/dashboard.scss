@@ -1,0 +1,138 @@
+page-dashboard {
+    .blue-screen {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(1, 135, 208, 0.8);
+        z-index: 1;
+//        position:absolute;
+        position: fixed;
+//        visibility: hidden;
+        //        contain: initial;
+        //        position:absolute;
+        //        position: inherit;
+    }
+    .blue-hide{visibility: hidden;}
+    .blue-show{visibility: visible;}
+    .background-profile {
+        width: 100%;
+        padding-bottom: 10px;
+        //        background-color: rgb(208, 1, 1);
+        background: url(../img/profile_background.jpg) no-repeat center center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+    }
+    .profile-picture {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        height: 60px;
+        width: 60px;
+        background-size: cover;
+        display: block;
+        margin: 6% auto 0 4%;
+        border-radius: 100px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-style: solid;
+        border-color: white;
+        border-width: 2px;
+        background-color: color($colors, primarydark);
+    }
+    .profile-name {
+        font-size: 12px;
+        //        text-transform: uppercase;
+        font-style: bold;
+        margin: 2% auto 0 4%;
+        color: white;
+    }
+    .profile-email {
+        font-size: 12px;
+        //        text-transform: uppercase;
+        margin: 1% auto 0 4%;
+        color: white;
+    }
+    .listDiv {}
+    div.listDiv {
+        overflow: auto;
+    }
+    //    .scroll-content {
+    .div.content {
+        overflow: auto;
+    }
+    .fab {
+        contain: initial;
+    }
+    ion-fab {
+        button {
+            box-shadow: 0 4px 10px #6b6b6b;
+        }
+        ion-fab-list button[ion-fab] {
+            text-align: center;
+            overflow: visible;
+            div.label {
+                position: absolute;
+                right: 48px;
+                background: white;
+                height: 24px;
+                color: color($colors, primarydark);
+                //   color: color($colors, primary);
+                font-weight: bold;
+                line-height: 16px;
+                padding-left: 8px;
+                padding-right: 8px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                margin-top: 2px;
+                border-radius: 5px;
+                box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.14), 0 4px 5px rgba(0, 0, 0, 0.1);
+            }
+        }
+        .button-inner {
+            overflow: visible;
+        }
+    }
+
+    ion-icon {
+        &[class*="soat-"] {
+            // Instead of using the font-based icons
+            // We're applying SVG masks
+            mask-size: contain;
+            mask-position: 50% 50%;
+            mask-repeat: no-repeat;
+            background: currentColor;
+            width: 1em;
+            height: 1em;
+        }
+        // custom icons
+        //Motorcycle
+        &[class*="soat-motoIOS"] {
+            mask-image: url(../img/moto_ios.svg);
+        }
+        &[class*="soat-motoMD"] {
+            mask-image: url(../img/moto_md.svg);
+        }
+        //Truck
+        &[class*="soat-truckMD"] {
+            mask-image: url(../img/truck_md.svg);
+        }
+        &[class*="soat-truckIOS"] {
+            mask-image: url(../img/truck_ios.svg);
+        }
+        //Suv
+        &[class*="soat-suvIOS"] {
+            mask-image: url(../img/suv_ios.svg);
+        }
+        &[class*="soat-suvMD"] {
+            mask-image: url(../img/suv_md.svg);
+        }
+        //Van
+        &[class*="soat-vanIOS"] {
+            mask-image: url(../img/van_ios.svg);
+        }
+        &[class*="soat-vanMD"] {
+            mask-image: url(../img/van_md.svg);
+        }
+    }
+   
+}

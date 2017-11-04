@@ -1,0 +1,26 @@
+{
+    "soatglobals": {
+        "cities": {
+            "Colombia":["Otra", "Cali"]
+        },
+        "countries": ["Colombia"],
+        "brandings": {
+            "cars": ["Chevrolet","KIA", "Hyundai", "Renault", "Mazda", "Honda", "Nissan", "Volkswagen", "Dodge", "Ford",
+                   "Toyota", "Mitsubishi", "Fiat", "Suzuki", "Volvo", "Subaru", "Audi", "Porsche", "Sanyong", "Daewoo", "BMW", "Mercedes", "Alpharomero", "Mini", "CHANA", "Daihadsu"],
+            
+            "motos": ["AKT", "Aprilia", "Auteco", "BMW", "Ducati", "Harley-Davidson", "Hero", "Honda", "Jialing", 
+                      "Moto Guzzi", "Piaggio", "Suzuki", "TVS", "UM", "Yamaha", "Kawasaki", "Royal Enfield"],
+     
+            
+            "suvs": ["Chevrolet", "KIA", "Hyundai", "Renault", "Mazda", "Honda", "Nissan", "Volkswagen", "Dodge", "Ford", 
+                      "Toyota", "Mitsubishi", "Jeep", "Fiat", "Suzuki", "Volvo", "Subaru", "Audi", "Porsche"],
+            "truck": ["Chevrolet", "Hyundai", "Nissan", "Volkswagen", "Mitsubishi"],
+            "van": ["Chevrolet", "KIA", "Hyundai", "Renault", "Honda", "Nissan", "Volkswagen", "Suzuki"],
+            "van": ["Chevrolet", "Hyundai", "Renault", "Volkswagen", "Fiat"]
+        },
+        "ImgNames":{
+            "soatFront": "_soat_front",
+            "soatBack": "_soat_back"
+        }
+    }
+}

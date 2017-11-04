@@ -1,0 +1,61 @@
+<!--
+  Generated template for the Service page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar color="primarydark">
+        <button ion-button menuToggle icon-only (click)="backButtonClick()">
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+        </button>
+        <ion-title>
+            {{ "service.nbar_txt_service" | translate }}
+        </ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+            <strong>{{ "service.title_txt_service" | translate }}</strong>
+        </ion-card-header>
+
+        <ion-list>
+            <!--<button (click)="goToNextPage(1)" [hidden]="platform.is('core')" ion-item>
+                <ion-icon ios="ios-alarm" md="md-alarm"  color="primarydark" item-left></ion-icon>
+                {{ "service.card_txt_remember" | translate }} 
+            </button>-->
+
+            <button (click)="goToNextPage(1)" ion-item>
+                <ion-icon ios="ios-alarm" md="md-alarm" color="primarydark" item-left></ion-icon>
+                {{ "service.card_txt_remember" | translate }}
+            </button>
+
+            <button (click)="goToNextPage(2)" ion-item>
+                <ion-icon ios="ios-card" md="md-card" color="primarydark" item-left></ion-icon>
+                {{ "service.card_txt_soat" | translate }}
+            </button>
+
+            <button (click)="goToNextPage(3)" ion-item>
+                <ion-icon ios="ios-cog" md="md-cog" color="primarydark" item-left></ion-icon>
+                {{ "service.card_txt_review" | translate }}
+            </button>
+
+            <button (click)="goToNextPage(4)" ion-item>
+                <ion-icon ios="ios-cash" md="md-cash" color="primarydark" item-left></ion-icon>
+                {{ "service.card_txt_tax" | translate }}
+            </button>
+
+            <button (click)="goToNextPage(5)" ion-item>
+                <ion-icon ios="ios-cash" md="md-cash" color="primarydark" item-left></ion-icon>
+                {{ "service.card_txt_tax" | translate }}
+            </button>
+
+
+        </ion-list>
+    </ion-card>
+</ion-content>

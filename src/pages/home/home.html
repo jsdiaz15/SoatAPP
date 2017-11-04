@@ -1,0 +1,54 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+-->
+ 
+
+
+<ion-content padding class="background-home">
+<!--
+    <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAJ57DA6XPQIUxjiXkQ8qjPbfBTmWDOWRU",
+            authDomain: "soatapp-1265.firebaseapp.com",
+            databaseURL: "https://soatapp-1265.firebaseio.com",
+            storageBucket: "soatapp-1265.appspot.com",
+            messagingSenderId: "657770190080"
+        };
+        firebase.initializeApp(config);
+    </script>
+-->
+  
+    <div class="logo-app"></div>
+    <div class="login-btns">
+        <div>
+            <button ion-button color="danger" block (click)="googleLogin()">{{ "home.btn_txt_gplus_login" | translate }}</button>
+            <button ion-button block (click)="facebookLogin()">{{ "home.btn_txt_fb_login" | translate }}</button>
+        </div>
+
+        <ion-list>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                <ion-item>
+                    <ion-label floating color="light">{{ "global.g_ph_txt_mail" | translate }}</ion-label>
+                    <ion-input type="email" formControlName="email"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating color="light">{{ "global.g_ph_txt_password" | translate }}</ion-label>
+                    <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+
+                <button ion-button type="submit" [disabled]="!form.valid" color="calm" block>{{ "global.g_btn_txt_login" | translate }}</button>
+            </form>
+            <button ion-button color="light" clear block (click)="presentModal()">{{ "home.btn_txt_create_account" | translate }}</button>
+        </ion-list>
+    </div>
+</ion-content>

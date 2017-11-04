@@ -1,0 +1,101 @@
+<!--
+  Generated template for the Remember page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-toolbar color="primarydark">
+        <button ion-button menuToggle icon-only (click)="backButtonClick()">
+      <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+    </button>
+        <ion-title>
+            {{ "remember.nbar_txt_remember" | translate }}
+        </ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-card [hidden]="vchId == 1">
+        <ion-card-header>
+            <ion-item>
+                <ion-label><strong> {{ "remember.card_txt_pyp" | translate }}</strong></ion-label>
+                <ion-toggle color="primarydark" (ionChange)='logEvent("pyp", $event)' [(ngModel)]="RemindToggle.pyp"></ion-toggle>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label>Mañana</ion-label>
+                <ion-label>{{RemindData.pypDay}}</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="RemindData.pypStarts"></ion-datetime>
+            </ion-item>
+
+            <ion-item>
+                <ion-label>Tarde</ion-label>
+                <ion-label>{{RemindData.pypDay}}</ion-label>
+                <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="RemindData.pypEnds"></ion-datetime>
+            </ion-item>
+
+        </ion-list>
+    </ion-card>
+
+
+    <ion-card>
+        <ion-card-header>
+            <ion-item>
+                <ion-label><strong> {{ "remember.card_txt_soat" | translate }}</strong></ion-label>
+                <ion-toggle color="primarydark" (ionChange)='logEvent("soat", $event)' [(ngModel)]="RemindToggle.soat"></ion-toggle>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label> {{ "remember.card_txt_deadline" | translate }}</ion-label>
+                <ion-datetime displayFormat="DD MM YYYY" min="2017" max="2022" pickerFormat="DD MMMM YYYY" [(ngModel)]="RemindData.soatEnds" 
+                              monthNames='{{ "global.g_title_txt_months" | translate }}'></ion-datetime>
+            </ion-item>
+
+        </ion-list>
+    </ion-card>
+
+
+    <ion-card>
+        <ion-card-header>
+            <ion-item>
+                <ion-label><strong> {{ "remember.card_txt_review" | translate }}</strong></ion-label>
+                <ion-toggle color="primarydark" (ionChange)='logEvent("review", $event)' [(ngModel)]="RemindToggle.review"></ion-toggle>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label> {{ "remember.card_txt_deadline" | translate }}</ion-label>
+                <ion-datetime  displayFormat="DD MM YYYY" min="2017" max="2022" pickerFormat="DD MMMM YYYY" [(ngModel)]="RemindData.reviewEnds" 
+                              monthNames='{{ "global.g_title_txt_months" | translate }}'></ion-datetime>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-item>
+                <ion-label><strong> {{ "remember.card_txt_tax" | translate }}</strong></ion-label>
+                <ion-toggle color="primarydark" (ionChange)='logEvent("tax", $event)' [(ngModel)]="RemindToggle.tax"></ion-toggle>
+            </ion-item>
+        </ion-card-header>
+
+        <ion-list>
+            <ion-item>
+                <ion-label> {{ "remember.card_txt_deadline" | translate }}</ion-label>
+                <ion-datetime  displayFormat="DD MM YYYY" min="2017" max="2022" pickerFormat="DD MMMM YYYY" [(ngModel)]="RemindData.taxEnds" 
+                              monthNames='{{ "global.g_title_txt_months" | translate }}'></ion-datetime>
+            </ion-item>
+        </ion-list>
+    </ion-card>
+
+</ion-content>
+

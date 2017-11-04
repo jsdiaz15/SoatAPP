@@ -1,0 +1,37 @@
+{
+    "sekewiglobals": {
+        "errorCodes": {
+            "password": "auth/wrong-password",
+            "user": "auth/user-not-found",
+            "email": "auth/email-already-in-use",
+            "error_id": "E",
+            "warning_id": "W",
+            "Success_id": "S",
+            "information_id": "I"
+        },
+         "Types": {
+            "radio": "radio"
+        },
+        "Routes":{
+            "images": "SOATimages/",
+            "users": "users/"
+        },
+        "ImgFormats":{
+            "jpg": ".jpg",
+            "png": ".png",
+            "gif": ".gif",
+            "svg": ".svg"
+        },
+        "Signs":{
+            "plus": "+",
+            "minus": "-",
+            "underscore": "_",
+            "slash": "/"
+            
+        },
+        "Mail":{
+            "mailgunUrl": "sandbox49c18b9e475741b695aba43e22c6fb98.mailgun.org",
+            "mailgunApiKey": "api:key-21dde0c8d6e3f636be7d416f9ced0c1c"
+        }
+    }
+}

@@ -1,0 +1,173 @@
+<!--
+  Generated template for the Dashboard page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+    <ion-toolbar color="primarydark">
+        <button ion-button menuToggle icon-only (click)="openMenu()">
+      <ion-icon name='menu'></ion-icon>
+    </button>
+        <ion-title>
+            SoatApp
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-menu type="overlay" side="left" [content]="userMenu">
+    <ion-header class="background-profile">
+        <div><img src="{{UserData.Photo}}" class="profile-picture"></div>
+        <div class="profile-name"><strong>{{UserData.User}}</strong></div>
+        <div class="profile-email">{{UserData.Email}}</div>
+    </ion-header>
+    <ion-content>
+        <ion-list>
+            <button ion-item>
+                  <ion-icon ios="ios-help-circle" md="md-help-circle" color="primarydark"></ion-icon>
+               {{ "dashboard.menu_txt_user_about" | translate }}
+            </button>
+            <button ion-item (click)="logout()">
+                 <ion-icon ios="ios-log-out" md="md-log-out" color="primarydark"></ion-icon>
+                {{ "dashboard.menu_txt_user_logout" | translate }}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #userMenu [root]="rootPage" swipe-back-enabled="false"></ion-nav>
+<!--<ion-nav id="nav" #userMenu [root]="rootPage"></ion-nav>-->
+
+
+<ion-content>
+
+
+
+
+    <!--    <ion-item >-->
+    <div class="blue-screen blue-hide" id="blueScreen"></div>
+    <!--    </ion-item>-->
+
+
+    <!--
+<ion-list padding>
+    <ion-card *ngFor="let uservehicle of UserVehicles | vehiclepipe">
+        <ion-card-content (click)="goToService(uservehicle.value.plate)" (press)="pressVehicleEvent($event)">
+            Key: {{uservehicle.value.branding}} Key: {{uservehicle.value.plate}} Key: {{uservehicle.value.reference}}
+        </ion-card-content>
+    </ion-card>
+</ion-list>-->
+
+
+
+    <ion-list>
+
+        <!--        <ion-item-sliding *ngFor="let uservehicle of UserVehicles | vehiclepipe">-->
+        <!--        <ion-item-sliding *ngFor="let uservehicle of (UserVehicles | vehiclepipe)">-->
+        <ion-item-sliding *ngFor="let uservehicle of UserVehicles">
+            <!--
+            <ion-item (click)="goToService(uservehicle.value.plate)">
+                Key: {{uservehicle.value.branding}} Key: {{uservehicle.value.plate}} Key: {{uservehicle.value.reference}} Key: {{uservehicle.value.id}}
+            </ion-item>
+-->
+            <!--            <ion-item (click)="goToService(uservehicle.value.plate, uservehicle.value.id)">-->
+            <ion-item (click)="goToService(uservehicle.plate, uservehicle.id)">
+                <ion-avatar item-left>
+                    <div *ngIf="this.platform.is('core') || this.platform.is('android'); then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock>
+                        <div *ngIf="uservehicle.id == 1">
+                            <img src="img/moto_md.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 2">
+                            <img src="img/car_md.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 3">
+                            <img src="img/suv_md.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 4">
+                            <img src="img/van_md.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 5">
+                            <img src="img/truck_md.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 6">
+                            <img src="img/bus_md.svg">
+                        </div>
+                    </ng-template>
+                    <ng-template #elseBlock>
+                        <div *ngIf="uservehicle.id == 1">
+                            <img src="img/moto_ios.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 2">
+                            <img src="img/car_ios.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 3">
+                            <img src="img/suv_ios.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 4">
+                            <img src="img/van_ios.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 5">
+                            <img src="img/truck_ios.svg">
+                        </div>
+                        <div *ngIf="uservehicle.id == 6">
+                            <img src="img/bus_ios.svg">
+                        </div>
+                    </ng-template>
+                </ion-avatar>
+                <h2 ion-text color="primarydark"><strong>{{uservehicle.branding}} {{uservehicle.reference}}</strong></h2>
+                <p>{{uservehicle.plate}} </p>
+            </ion-item>
+
+            <ion-item-options side="right">
+                <button ion-button color="primarydark">
+                    <ion-icon ios="ios-create" md="md-create"></ion-icon>
+                    {{ "global.g_btn_txt_edit" | translate }}
+                </button>
+                <button ion-button color="danger" (click)="removeItem(uservehicle)">
+                    <ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+                    {{ "global.g_btn_txt_delete" | translate }}
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-fab right bottom #fab>
+        <button ion-fab color="primarydark" id="blueButton" (click)="showBlueScreen()">
+            <ion-icon ios="ios-add" md="md-add"></ion-icon>
+        </button>
+        <ion-fab-list side="top">
+            <button ion-fab (click)="goToVehicle(1, fab)">
+                <ion-icon ios="soat-motoIOS" md="soat-motoMD" color="primarydark"></ion-icon>
+                <div class="label"> {{ "dashboard.btn_txt_motorcycle" | translate }}</div>
+            </button>
+
+            <button ion-fab (click)="goToVehicle(2, fab)">
+                <ion-icon ios="ios-car" md="md-car" color="primarydark"></ion-icon>
+                <div class="label"> {{ "dashboard.btn_txt_car" | translate }}</div>
+            </button>
+
+            <button ion-fab (click)="goToVehicle(3, fab)">
+                <ion-icon ios="soat-suvIOS" md="soat-suvMD" color="primarydark"></ion-icon>
+                <div class="label"> {{ "dashboard.btn_txt_SUV" | translate }}</div>
+            </button>
+
+            <button ion-fab (click)="goToVehicle(4, fab)">
+                <ion-icon ios="soat-vanIOS" md="soat-vanMD" color="primarydark"></ion-icon>
+                <div class="label"> {{ "dashboard.btn_txt_van" | translate }}</div>
+            </button>
+
+            <button ion-fab (click)="goToVehicle(5, fab)">
+                <ion-icon ios="soat-truckIOS" md="soat-truckMD" color="primarydark"></ion-icon>
+                <div class="label"> {{ "dashboard.btn_txt_truck" | translate }}</div>
+            </button>
+
+            <button ion-fab (click)="goToVehicle(6, fab)">
+                <ion-icon ios="ios-bus" md="md-bus" color="primarydark"></ion-icon>
+                <div class="label"> {{ "dashboard.btn_txt_bus" | translate }}</div>
+            </button>
+        </ion-fab-list>
+    </ion-fab>
+
+</ion-content>

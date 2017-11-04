@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.ionicframework.soatapp362646" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>SoatApp</name>
+    <description>An awesome Ionic/Cordova app.</description>
+    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="android-minSdkVersion" value="16" />
+    <preference name="BackupWebStorage" value="none" />
+    <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="FadeSplashScreenDuration" value="300" />
+    <preference name="Orientation" value="portrait" />
+    <feature name="StatusBar">
+        <param name="ios-package" onload="true" value="CDVStatusBar" />
+    </feature>
+    <allow-navigation href="http://10.21.111.20:8000" />
+    <allow-navigation href="http://10.21.111.28:8000" />
+    <allow-navigation href="http://10.21.111.38:8000" />
+    <allow-navigation href="http://10.21.111.34:8000" />
+    <allow-navigation href="http://10.21.111.29:8000" />
+    <allow-navigation href="http://192.168.1.32:8000" />
+    <allow-navigation href="http://10.21.111.117:8000" />
+    <allow-navigation href="http://10.21.111.118:8100" />
+    <allow-navigation href="http://192.168.1.12:8100" />
+    <allow-navigation href="http://10.21.111.19:8100" />
+    <allow-navigation href="http://10.21.111.18:8100" />
+    <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
+    <plugin name="cordova-plugin-googleplus" spec="https://github.com/EddyVerbruggen/cordova-plugin-googleplus">
+        <variable name="REVERSED_CLIENT_ID" value="657770190080-2piogrqvmjdvo15ecae4ipbrif4i51e9.apps.googleusercontent.com" />
+    </plugin>
+    <plugin name="phonegap-plugin-push" spec="1.9.2">
+        <variable name="SENDER_ID" value="657770190080" />
+    </plugin>
+    <plugin name="cordova-plugin-facebook4" spec="~1.7.4">
+        <variable name="APP_ID" value="1310235545694541" />
+        <variable name="APP_NAME" value="SoatApp" />
+    </plugin>
+    <plugin name="cordova-plugin-firebase" spec="~0.1.19" />
+    <engine name="browser" spec="~4.1.0" />
+    <engine name="android" spec="~6.1.2" />
+    <allow-navigation href="http://192.168.1.13:8101" />
+</widget>
