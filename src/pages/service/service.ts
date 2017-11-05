@@ -59,7 +59,7 @@ export class ServicePage {
             case 4:
                 let options = 'location=yes,toolbar=yes,hidden=no,hardwareback=yes';
                 let url = 'http://vehiculos.valledelcauca.gov.co/post_smart_valle_prod/www/com.aspsolutions.GWTJSuite/GWTJSuite.html?cn=com.smart.src.taxvalle.taxinva.taxinva&war=post_smart_valle_prod';
-                const browser = this.iab.create(url, '_blank', options);
+                const browser = this.iab.create(url, '_system', options);
                 //this.navServiceCtrl.push(TaxPage, { plate: this.Plate, uid: this.Uid, city: this.City, vchId: this.vchId });
                 break;
             case 5:

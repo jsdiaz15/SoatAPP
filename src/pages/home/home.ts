@@ -218,10 +218,10 @@ export class HomePage {
         }
 
         else if (this.platform.is('core') && count >= 2) {
-            this.man.User = Man.user.displayName;
-            this.man.Email = Man.user.email;
-            this.man.Photo = Man.user.photoURL;
-            this.man.Uid = Man.user.uid;
+            this.man.User = Man.displayName;
+            this.man.Email = Man.email;
+            this.man.Photo = Man.photoURL;
+            this.man.Uid = Man.uid;
         }
         else if ((!this.platform.is('core')) && count >= 2) {
             this.man.User = Man.displayName;

@@ -14,6 +14,7 @@ import { WslidePage } from '../wslide/wslide';
 //import { Push } from 'ionic-native';
 import firebase from 'firebase';
 import { Firebase } from '@ionic-native/firebase';
+//import { FirebaseAnalytics } from '@ionic-native/firebase-analytics';
 //interface Window {
 //    FirebasePlugin: any;
 //}
@@ -76,31 +77,50 @@ export class DashboardPage {
     }
 
     ionViewDidEnter() {
+        ////****Prevent menu opens automatically
+        this.menuCtrl.close('UserMenu');
+        this.menuCtrl.enable(true, 'UserMenu');
+        this.menuCtrl.swipeEnable(true, 'UserMenu');
+        
         ////****Registry Backbutton Android / WindowsPhone
         this.platform.registerBackButtonAction(() => {
             if (!this.platform.is('core')) {
                 this.platform.exitApp();
             }
         });
+        //this.closeMenu();
         ////****If is new, need to set the city
         this.updateCity();
+
         ////****Get vehicles   
         //        this.getVehicles();
 
     }
 
-    openMenu() {
-        this.menuCtrl.open('0');
+    ionViewWillLeave(){
+        this.menuCtrl.enable(false, 'UserMenu');
     }
 
-    closeMenu() {
+    toggleLeftMenu() {
+        this.menuCtrl.enable(true, 'UserMenu');
+        this.menuCtrl.toggle('UserMenu');
+    }
+
+
+   /* closeMenu() {
+        this.menuCtrl.close('UserMenu');
+    }*/
+
+    /*
+       toggleLeftMenu() {
         this.menuCtrl.close();
-    }
-
+        //this.menuCtrl.toggle();
+      }
+    
     toggleMenu() {
         console.log("se abrio esta mierda");
         this.menuCtrl.toggle();
-    }
+    }*/
 
 
     showBlueScreen() {
@@ -269,7 +289,14 @@ export class DashboardPage {
             handler: data => {
                 ////****Add User property to Firebase DB
                 if (!this.platform.is('core')) {
+                   /* this.firebaseAnalytics.logEvent('page_view', {page: "dashboard"})
+                    .then((res: any) => console.log(res)
+                    )
+                    .catch((error: any) => console.error(error));
+                    this.firebaseAnalytics.setUserProperty("Ciudad", data);*/
+
                     this.FirebasePlugin.prototype.setUserProperty("Ciudad", data);
+                    
                     console.log("Property Sended: " + data);
                 }
                 ////****Add city value to FireBase DB

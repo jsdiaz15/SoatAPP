@@ -78,8 +78,10 @@ export class VehiclePage {
 
     ionViewDidEnter() {
         ////****Set Admob Advertisement
-        AdMob.prepareInterstitial({
-            adId: 'ca-app-pub-2151147081552695/4926688367',
+        //AdMob.prepareInterstitial({
+        AdMob.prepareRewardVideoAd({
+            //adId: 'ca-app-pub-2151147081552695/4926688367',
+            adId: 'ca-app-pub-2151147081552695/4507631668',
             autoShow: false
         });
         ////****Add event when user close banner
@@ -101,7 +103,8 @@ export class VehiclePage {
         setTimeout(() => {
             if (!this.platform.is('core')) {
                 loading.dismiss().catch(() => { });
-                AdMob.showInterstitial();
+                //AdMob.showInterstitial();
+                AdMob.showRewardVideoAd();
                 this.navVehicleCtrl.pop();
             } else {
                 loading.dismiss().catch(() => { });

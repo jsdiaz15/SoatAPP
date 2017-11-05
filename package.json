@@ -23,10 +23,18 @@
     "@ionic-native/core": "4.1.0",
     "@ionic-native/firebase": "^3.4.2",
     "@ionic-native/in-app-browser": "^4.3.1",
+    "@ionic-native/push": "^4.3.3",
     "@ionic-native/splash-screen": "4.1.0",
     "@ionic-native/status-bar": "4.1.0",
     "@ionic/storage": "2.0.1",
     "angularfire2": "^2.0.0-beta.6",
+    "cordova-android": "6.3.0",
+    "cordova-plugin-compat": "^1.2.0",
+    "cordova-plugin-facebook4": "~1.7.4",
+    "cordova-plugin-firebase": "~0.1.19",
+    "cordova-plugin-googleplus": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus",
+    "cordova-plugin-inappbrowser": "~1.6.1",
+    "cordova-support-google-services": "^1.0.0",
     "emailjs": "^1.0.8",
     "firebase": "^3.6.4",
     "ionic-angular": "3.5.3",
@@ -35,14 +43,7 @@
     "ng2-translate": "^4.0.1",
     "rxjs": "5.4.0",
     "sw-toolbox": "3.6.0",
-    "zone.js": "0.8.12",
-    "cordova-browser": "~4.1.0",
-    "cordova-android": "~6.1.2",
-    "cordova-plugin-inappbrowser": "~1.6.1",
-    "cordova-plugin-googleplus": "https://github.com/EddyVerbruggen/cordova-plugin-googleplus",
-    "phonegap-plugin-push": "1.9.2",
-    "cordova-plugin-facebook4": "~1.7.4",
-    "cordova-plugin-firebase": "~0.1.19"
+    "zone.js": "0.8.12"
   },
   "devDependencies": {
     "@ionic/app-scripts": "2.1.0",
@@ -64,7 +65,6 @@
   },
   "cordova": {
     "platforms": [
-      "browser",
       "android"
     ],
     "plugins": {
@@ -72,14 +72,13 @@
       "cordova-plugin-googleplus": {
         "REVERSED_CLIENT_ID": "657770190080-2piogrqvmjdvo15ecae4ipbrif4i51e9.apps.googleusercontent.com"
       },
-      "phonegap-plugin-push": {
-        "SENDER_ID": "657770190080"
-      },
       "cordova-plugin-facebook4": {
         "APP_ID": "1310235545694541",
         "APP_NAME": "SoatApp"
       },
-      "cordova-plugin-firebase": {}
+      "cordova-plugin-firebase": {},
+      "cordova-plugin-compat": {},
+      "cordova-support-google-services": {}
     }
   }
 }

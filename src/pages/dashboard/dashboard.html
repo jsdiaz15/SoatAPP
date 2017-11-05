@@ -7,29 +7,34 @@
 
 <ion-header>
     <ion-toolbar color="primarydark">
-        <button ion-button menuToggle icon-only (click)="openMenu()">
-      <ion-icon name='menu'></ion-icon>
-    </button>
+        <!--<button ion-button menuToggle icon-only>-->
+        <button ion-button menuToggle icon-only (click)="toggleLeftMenu()">
+            <ion-icon name='menu'></ion-icon>
+        </button>
         <ion-title>
             SoatApp
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-menu type="overlay" side="left" [content]="userMenu">
+<ion-menu type="overlay" side="left" id="UserMenu" [content]="userMenu">
     <ion-header class="background-profile">
-        <div><img src="{{UserData.Photo}}" class="profile-picture"></div>
-        <div class="profile-name"><strong>{{UserData.User}}</strong></div>
+        <div>
+            <img src="{{UserData.Photo}}" class="profile-picture">
+        </div>
+        <div class="profile-name">
+            <strong>{{UserData.User}}</strong>
+        </div>
         <div class="profile-email">{{UserData.Email}}</div>
     </ion-header>
     <ion-content>
         <ion-list>
             <button ion-item>
-                  <ion-icon ios="ios-help-circle" md="md-help-circle" color="primarydark"></ion-icon>
-               {{ "dashboard.menu_txt_user_about" | translate }}
+                <ion-icon ios="ios-help-circle" md="md-help-circle" color="primarydark"></ion-icon>
+                {{ "dashboard.menu_txt_user_about" | translate }}
             </button>
             <button ion-item (click)="logout()">
-                 <ion-icon ios="ios-log-out" md="md-log-out" color="primarydark"></ion-icon>
+                <ion-icon ios="ios-log-out" md="md-log-out" color="primarydark"></ion-icon>
                 {{ "dashboard.menu_txt_user_logout" | translate }}
             </button>
         </ion-list>
@@ -37,6 +42,7 @@
 </ion-menu>
 
 <ion-nav id="nav" #userMenu [root]="rootPage" swipe-back-enabled="false"></ion-nav>
+<!--<ion-nav id="nav" #userMenu [root]="rootPage" swipe-back-enabled="false"></ion-nav>-->
 <!--<ion-nav id="nav" #userMenu [root]="rootPage"></ion-nav>-->
 
 
@@ -116,7 +122,9 @@
                         </div>
                     </ng-template>
                 </ion-avatar>
-                <h2 ion-text color="primarydark"><strong>{{uservehicle.branding}} {{uservehicle.reference}}</strong></h2>
+                <h2 ion-text color="primarydark">
+                    <strong>{{uservehicle.branding}} {{uservehicle.reference}}</strong>
+                </h2>
                 <p>{{uservehicle.plate}} </p>
             </ion-item>
 
